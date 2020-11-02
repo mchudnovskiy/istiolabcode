@@ -27,7 +27,7 @@ func main() {
 				if err != nil {
 					sugar.Error(err)
 				}
-				sugar.Infof("\nRecieved pong response: << %s >>", string(bodyBytes))
+				sugar.Infof("Recieved pong response: << %s >>", string(bodyBytes))
 			}			
 		}
 		time.Sleep(time.Second)

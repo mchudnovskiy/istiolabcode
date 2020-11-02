@@ -32,7 +32,7 @@ func main() {
 	defer logger.Sync()
 	sugar := logger.Sugar()
 
-	sugar.Info("Lab server is started on port 5656 and is waiting for requests.")
+	sugar.Info("Lab server is started on port 8686 and is waiting for requests.")
 	http.HandleFunc("/ping", pingHandler)
 	http.ListenAndServe(":8686", nil)
 }
