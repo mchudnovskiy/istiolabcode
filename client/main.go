@@ -19,7 +19,7 @@ func main() {
 	for {
 		resp, err := http.Get("http://http-server:8686/ping")
 		if err != nil {
-			sugar.Error(err)
+			sugar.Infof("An error occured during the ping request: %s", err)
 		} else {
 			defer resp.Body.Close()
 			if resp.StatusCode == http.StatusOK {
@@ -27,7 +27,7 @@ func main() {
 				if err != nil {
 					sugar.Error(err)
 				}
-				sugar.Infof("Recieved pong response: << %s >>", string(bodyBytes))
+				sugar.Infof("A pong response is recieved on the ping request: << %s >>", string(bodyBytes))
 			}			
 		}
 		time.Sleep(time.Second)
