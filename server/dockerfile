@@ -1,0 +1,16 @@
+# Start from the latest golang base image
+FROM golang:latest
+
+WORKDIR /app
+
+COPY go.mod go.sum ./
+
+RUN go mod download
+
+COPY server/main.go .
+
+RUN go build -o server .
+
+EXPOSE 8686
+
+CMD ["./server"]
